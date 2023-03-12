@@ -32,7 +32,7 @@ public class FireInfoServiceImpl extends ServiceImpl<FireInfoDao, FirerInfoEntit
   @Override
   public List<FirerInfoEntity> queryList(FireInfoDTO reqDTO) {
     LambdaQueryWrapper<FirerInfoEntity> wrapper = Wrappers.lambdaQuery();
-    wrapper.eq(StringUtils.isNotBlank(reqDTO.getName()), FirerInfoEntity::getName, reqDTO.getName());
+    wrapper.eq(StringUtils.isNotBlank(reqDTO.getName()), FirerInfoEntity::getFireName, reqDTO.getName());
     return fireInfoDao.selectList(wrapper);
 
   }

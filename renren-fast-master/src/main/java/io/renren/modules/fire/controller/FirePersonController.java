@@ -28,7 +28,7 @@ public class FirePersonController {
     @ApiOperation("信息")
     public FirerInfoEntity get(@PathVariable("name") String name) {
         LambdaQueryWrapper<FirerInfoEntity> wrapper = Wrappers.lambdaQuery();
-        wrapper.eq(StringUtils.isNotBlank(name), FirerInfoEntity::getName, name);
+        wrapper.eq(StringUtils.isNotBlank(name), FirerInfoEntity::getFireName, name);
         List<FirerInfoEntity> list = fireInfoService.queryList(FireInfoDTO.builder().name(name).build());
         if (CollectionUtils.isEmpty(list)) {
             return new FirerInfoEntity();

@@ -40,7 +40,7 @@ public class FireInfoController {
   @ApiOperation("保存/修改")
   public void saveOrUpdate(@RequestBody FirerInfoEntity entity) {
     if (null == entity.getId()) {
-      List<FirerInfoEntity> firerInfoEntities = fireInfoService.queryList(FireInfoDTO.builder().name(entity.getName()).build());
+      List<FirerInfoEntity> firerInfoEntities = fireInfoService.queryList(FireInfoDTO.builder().name(entity.getFireName()).build());
       if (CollectionUtils.isNotEmpty(firerInfoEntities)) {
         throw new RRException("名字重复");
       }
