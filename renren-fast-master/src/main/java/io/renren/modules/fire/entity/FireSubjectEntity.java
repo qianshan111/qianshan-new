@@ -12,7 +12,7 @@ import lombok.Data;
 public class FireSubjectEntity {
     private Long id;
     @ApiModelProperty(value = "消防科目名称")
-    private String name;
+    private String subjectName;
     @ApiModelProperty(value = "描述")
     private String describe;
 }

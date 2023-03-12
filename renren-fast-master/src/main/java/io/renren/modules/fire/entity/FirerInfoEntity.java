@@ -9,7 +9,7 @@ import lombok.Data;
 public class FirerInfoEntity {
     private Long id;
     @ApiModelProperty(value = "名字（修改时 名字不可以改）")
-    private String name;
+    private String fireName;
     @ApiModelProperty(value = "身份证号")
     private String idNumber;
     @ApiModelProperty(value = "手机号")
