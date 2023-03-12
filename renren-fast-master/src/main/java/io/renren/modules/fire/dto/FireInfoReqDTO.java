@@ -9,5 +9,7 @@ import lombok.Data;
 public class FireInfoReqDTO extends BaseDTO {
   @ApiModelProperty(value = "状态（传 未审核）")
   private String state = FireEnum.未审核.name();
+  @ApiModelProperty(value = "姓名")
+  private String fireName;
 
 }

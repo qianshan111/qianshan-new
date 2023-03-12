@@ -1,6 +1,22 @@
--- 消防员信息表
-CREATE TABLE `fire_admitter` (
-  `id` bigint DEFAULT NULL,
+CREATE TABLE `fire_subject_record` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
+  `subject_id` bigint DEFAULT NULL,
+  `subject_name` varchar(100) DEFAULT NULL,
+  `fire_id` bigint DEFAULT NULL,
+  `fire_name` varchar(100) DEFAULT NULL,
+  `record` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `fire_subject` (
+  `id` bigint NOT NULL,
+  `subject_name` varchar(500) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '科目名',
+  `describe` varchar(500) DEFAULT NULL COMMENT '描述',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='消防员科目表';
+
+CREATE TABLE `firer_info` (
+  `id` bigint NOT NULL AUTO_INCREMENT,
   `fire_name` varchar(500) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `id_number` varchar(500) DEFAULT NULL COMMENT '身份证号',
   `phone` varchar(500) DEFAULT NULL COMMENT '手机号',
@@ -15,15 +31,9 @@ CREATE TABLE `fire_admitter` (
   `picture` varchar(2000) DEFAULT NULL COMMENT '图片',
   `enter_result` varchar(500) DEFAULT NULL COMMENT '录取结果 sucess/fail',
   `record` int DEFAULT NULL COMMENT '总成绩',
-  `sort` int DEFAULT NULL COMMENT '排名'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='消防员信息表';
-
--- 消防员科目表
-CREATE TABLE `fire_subject` (
-  `id` bigint DEFAULT NULL,
-  `subject_name` varchar(500) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL COMMENT '科目名',
-  `describe` varchar(500) DEFAULT NULL COMMENT '描述'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COMMENT='消防员科目表';
+  `sort` int DEFAULT NULL COMMENT '排名',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COMMENT='消防员信息表';
 
 -- 菜单
 CREATE TABLE `sys_menu` (

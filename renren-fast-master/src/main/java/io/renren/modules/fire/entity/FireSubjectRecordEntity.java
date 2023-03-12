@@ -18,8 +18,8 @@ public class FireSubjectRecordEntity {
     /**
      * 消防员
      */
-    private Long firerId;
-    private String firerName;
+    private Long fireId;
+    private String fireName;
     private Integer record;
 
 }

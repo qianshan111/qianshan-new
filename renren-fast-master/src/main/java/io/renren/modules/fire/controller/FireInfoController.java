@@ -39,16 +39,7 @@ public class FireInfoController {
   @PostMapping
   @ApiOperation("保存/修改")
   public void saveOrUpdate(@RequestBody FirerInfoEntity entity) {
-    if (null == entity.getId()) {
-      List<FirerInfoEntity> firerInfoEntities = fireInfoService.queryList(FireInfoDTO.builder().name(entity.getFireName()).build());
-      if (CollectionUtils.isNotEmpty(firerInfoEntities)) {
-        throw new RRException("名字重复");
-      }
-      fireInfoService.save(entity);
-    } else {
-      fireInfoService.removeById(entity.getId());
-      fireInfoService.save(entity);
-    }
+    fireInfoService.saveOrUpdate(entity);
   }
 
   @DeleteMapping("{id}")
