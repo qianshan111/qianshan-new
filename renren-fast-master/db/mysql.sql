@@ -1,3 +1,30 @@
+-- 消防员信息表
+CREATE TABLE `fire_admitter` (
+                                 `id` bigint(20) DEFAULT NULL,
+                                 `name` varchar(500) DEFAULT NULL,
+                                 `id_number` varchar(500) DEFAULT NULL COMMENT '身份证号',
+                                 `phone` varchar(500) DEFAULT NULL COMMENT '手机号',
+                                 `gender` varchar(500) DEFAULT NULL COMMENT '性别（0男，1女）',
+                                 `height` varchar(500) DEFAULT NULL COMMENT '身高',
+                                 `weight` varchar(500) DEFAULT NULL COMMENT '体重',
+                                 `address` varchar(1000) DEFAULT NULL COMMENT '住址',
+                                 `qualification` varchar(500) DEFAULT NULL COMMENT '学历',
+                                 `native_place` varchar(1000) DEFAULT NULL COMMENT '籍贯',
+                                 `state` varchar(500) DEFAULT NULL COMMENT '审核中/审核通过/审核驳回',
+                                 `reason` varchar(1000) DEFAULT NULL COMMENT '原因',
+                                 `picture` varchar(2000) DEFAULT NULL COMMENT '图片',
+                                 `enter_result` varchar(500) DEFAULT NULL COMMENT '录取结果 sucess/fail',
+                                 `record` int(11) DEFAULT NULL COMMENT '总成绩',
+                                 `sort` int(11) DEFAULT NULL COMMENT '排名'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='消防员信息表';
+
+-- 消防员科目表
+CREATE TABLE `fire_subject` (
+  `id` bigint(20) DEFAULT NULL,
+  `name` varchar(500) DEFAULT NULL COMMENT '科目名',
+  `describe` varchar(500) DEFAULT NULL COMMENT '描述'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='消防员科目表';
+
 -- 菜单
 CREATE TABLE `sys_menu` (
   `menu_id` bigint NOT NULL AUTO_INCREMENT,
