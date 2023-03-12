@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * 科目
+ * 科目 名字
  */
 @Data
 @TableName("fire_subject")
