@@ -27,10 +27,11 @@ public class FirerManagerController {
 
   @PostMapping
   @ApiOperation("审核通过/审核驳回")
-  public void saveOrUpdate(@RequestBody FirePassDTO dto) {
+  public Integer saveOrUpdate(@RequestBody FirePassDTO dto) {
     FirerInfoEntity entity = fireInfoService.getById(dto.getId());
     entity.setState(dto.getState());
     entity.setReason(dto.getReason());
     fireInfoService.updateById(entity);
+    return 1;
   }
 }

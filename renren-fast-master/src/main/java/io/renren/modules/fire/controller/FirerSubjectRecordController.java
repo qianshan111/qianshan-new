@@ -32,7 +32,8 @@ public class FirerSubjectRecordController {
 
   @PostMapping
   @ApiOperation("保存/修改")
-  public void saveOrUpdate(@RequestBody FireSubjectRecordEntity entity) {
+  public Integer saveOrUpdate(@RequestBody FireSubjectRecordEntity entity) {
     fireSubjectRecordService.saveOrUpdate(entity);
+    return 1;
   }
 }

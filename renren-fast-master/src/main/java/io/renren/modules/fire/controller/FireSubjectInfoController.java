@@ -34,14 +34,16 @@ public class FireSubjectInfoController {
 
   @PostMapping
   @ApiOperation("保存/修改")
-  public void saveOrUpdate(@RequestBody FireSubjectEntity entity) {
+  public Integer saveOrUpdate(@RequestBody FireSubjectEntity entity) {
     fireSubjectService.saveOrUpdate(entity);
+    return 1;
   }
 
   @DeleteMapping("{id}")
   @ApiOperation("删除")
-  public void delete(@PathVariable("id") Long id) {
+  public Integer delete(@PathVariable("id") Long id) {
     fireSubjectService.removeById(id);
+    return 1;
   }
 
 }
