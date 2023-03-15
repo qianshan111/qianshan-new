@@ -25,7 +25,8 @@ public class FireInfoServiceImpl extends ServiceImpl<FireInfoDao, FirerInfoEntit
   public IPage<FirerInfoEntity> page(FireInfoReqDTO dto) {
     Page<FirerInfoEntity> pageReq = new Page<>(dto.getPage(), dto.getLimit());
     LambdaQueryWrapper<FirerInfoEntity> wrapper = Wrappers.lambdaQuery();
-    //wrapper.eq(StringUtils.isNotBlank(dto.getState()), FirerInfoEntity::getState, dto.getState());
+    wrapper.eq(StringUtils.isNotBlank(dto.getEnterResult()),FirerInfoEntity::getEnterResult,dto.getEnterResult());
+    wrapper.eq(StringUtils.isNotBlank(dto.getState()), FirerInfoEntity::getState, dto.getState());
     return fireInfoDao.selectPage(pageReq, wrapper);
   }
 

@@ -5,4 +5,5 @@ import lombok.Data;
 
 @Data
 public class FireSubjectRecordReqDTO extends BaseDTO {
+  private String enterResult;
 }
